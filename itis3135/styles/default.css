@@ -4,12 +4,25 @@ body{
     color:rgb(213, 24, 24);
     background-color: rgb(7, 42, 72);
 }
+header{
+    text-align: center;
+}
 main{
     font-size:20px;
+    margin-left: 30px;
+}
+footer{
+    text-align: center;
 }
 p{
     width:85%;
     height:100%;
+}
+footer p{
+    color: gray;
+}
+footer p a{
+    color: rgb(124, 119, 197);
 }
 a{
     color:cyan;
