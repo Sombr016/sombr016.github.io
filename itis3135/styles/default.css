@@ -1,60 +1,72 @@
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:rgb(213, 24, 24);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(213, 24, 24);
     background-color: rgb(7, 42, 72);
 }
-header{
+
+header {
     text-align: center;
 }
-main{
-    font-size:20px;
+
+main {
+    font-size: 20px;
     margin-left: 30px;
 }
-footer{
+
+footer {
     text-align: center;
 }
-p{
-    width:85%;
-    height:100%;
+
+p {
+    width: 85%;
+    height: 100%;
 }
-footer p{
+
+footer p {
     color: gray;
 }
-footer p a{
+
+footer p a {
     color: rgb(124, 119, 197);
 }
-a{
-    color:cyan;
+
+a {
+    color: cyan;
 }
-a:hover{
-    color:rgb(205, 146, 7);
+
+a:hover {
+    color: rgb(205, 146, 7);
 }
-a:active{
+
+a:active {
     color: yellow;
 }
-figcaption{
+
+figcaption {
     text-align: center;
     font-style: italic;
 }
-img{
-    display:block;
+
+img {
+    display: block;
     margin: auto;
 }
 
-#intro{
-    display:block;
+#intro {
+    display: block;
     text-align: center;
 }
-#intro-list > li{
-    width:80%;
+
+#intro-list>li {
+    width: 80%;
     margin-bottom: 15px;
 }
 
-#quote{
-    text-align:center;
+#quote {
+    text-align: center;
 }
-#quote-name{
-    text-align:center;
+
+#quote-name {
+    text-align: center;
     font-style: italic;
 }
