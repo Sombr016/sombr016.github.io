@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIS3135 | Jacob Kilcrease's | Joyous Kiwi | ITIS 3135 fCC JavaScript outline</title>
+    <link rel="stylesheet" type="text/css" href="./styles/default.css">
+    <!-- embedded lecture styling (keeps default.css unchanged) -->
+    <style>
+        
+        table {
+            border-collapse: collapse; /* cells share borders so boxes touch */
+            border: 3px solid black;
+            margin: auto; /*centers the table on the screen*/
+        }
+
+        /* inner grid lines (lighter/different shade) */
+        th, td {
+            border: 2px solid #757474; /* inner cell border (lighter/different) */
+        }
+
+        th{
+            padding:8px;
+        }
+        tr{
+            padding:3px;
+        }
+
+        td{
+            padding: 6px;
+        }
+        #sections{
+            width: 160px;
+        }
+        #num-step{
+            width: 90px;
+        }
+        #summary{
+            width: 300px;
+        }
+        #dates-due{
+            width: 30px;
+        }
+        .acknowledgement{
+            margin: auto;
+            font-size: 23px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <p class="acknowledgement">I, Jacob Kilcrease, intend to finish the freeCodeCamp Full Stack Developer JavaScript section over the next 6 weeks according to the following general schedule:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th id="sections">Sections</th>
+                    <th id="num-step">Number of Steps</th>
+                    <th id="summary">Summary</th>
+                    <th id="dates-due">Dates Due</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Code Editors</td> 
+                    <td>5 steps</td>
+                    <td>Differend code editors and IDEs for Java Script</td> 
+                    <td>10/6</td>
+                </tr>
+                <tr>
+                    <td>Variables and Strings</td>
+                    <td>62 steps</td>
+                    <td>Introduction to variables and string manipulation in JavaScript.</td>
+                    <td>10/6</td>
+                </tr>
+                <tr>
+                    <td>Booleans and Numbers</td>
+                    <td>37 steps</td>
+                    <td>Working with boolean values and numerical operations.</td>
+                    <td>10/7</td>
+                </tr>
+                <tr>
+                    <td>Functions</td>
+                    <td>38 steps</td>
+                    <td>Creating and using functions in JavaScript.</td>
+                    <td>10/8</td>
+                </tr>
+                <tr>
+                    <td>Arrays</td>
+                    <td>35 steps</td>
+                    <td>Exploring arrays and their methods for data storage and manipulation.</td>
+                    <td>10/9</td>
+                </tr>
+                <tr>
+                    <td>Objects</td>
+                    <td>28 steps</td>
+                    <td>Learning about objects and their properties in JavaScript.</td>
+                    <td>10/10</td>
+                </tr>
+                <tr>
+                    <td>Loops</td>
+                    <td>22 steps</td>
+                    <td>Using loops to iterate over data and automate repetitive tasks.</td>
+                    <td>10/11</td>
+                </tr>
+                <tr>
+                    <td>JavaScript Fundamentals Review</td>
+                    <td>30 steps</td>
+                    <td>Reviewing the basics of JavaScript programming.</td>
+                    <td>10/12</td>
+                </tr>
+                <tr>
+                    <td>Higher Order Functions And Callbacks</td>
+                    <td>36 steps</td>
+                    <td>Understanding higher-order functions and callback mechanisms.</td>
+                    <td>10/13</td>
+                </tr>
+                <tr>
+                    <td>DOM Manipulation And Events</td>
+                    <td>87 steps</td>
+                    <td>Manipulating the DOM and handling user events in JavaScript.</td>
+                    <td>10/16</td>
+                </tr>
+                <tr>
+                    <td>JavaScript and Accessebility</td>
+                    <td>42 steps</td>
+                    <td>Ensuring accessibility in web applications using JavaScript.</td>
+                    <td>10/17</td>
+                </tr>
+                <tr>
+                    <td>Debugging</td>
+                    <td>8 steps</td>
+                    <td>Techniques for debugging JavaScript code effectively.</td>
+                    <td>10/18</td>
+                </tr>
+                <tr>
+                    <td>Basic Regex</td>
+                    <td>47 steps</td>
+                    <td>Introduction to regular expressions for pattern matching.</td>
+                    <td>10/19</td>
+                </tr>
+                <tr>
+                    <td>Form Validation</td>
+                    <td>103 steps</td>
+                    <td>Implementing form validation using JavaScript.</td>
+                    <td>10/20</td>
+                </tr>
+                <tr>
+                    <td>Dates</td>
+                    <td>5 steps</td>
+                    <td>Working with dates and time in JavaScript.</td>
+                    <td>10/20</td>
+                </tr>
+                <tr>
+                    <td>Audio and Video Events</td>
+                    <td>55 steps</td>
+                    <td>Handling audio and video events in web applications.</td>
+                    <td>10/22</td>
+                </tr>
+                <tr>
+                    <td>Maps and Sets</td>
+                    <td>37 steps</td>
+                    <td>Using Map and Set objects for efficient data storage.</td>
+                    <td>10/23</td>
+                </tr>
+                <tr>
+                    <td>localStorage and CRUD Operations</td>
+                    <td>78 steps</td>
+                    <td>Storing data locally and performing CRUD operations.</td>
+                    <td>10/26</td>
+                </tr>
+                <tr>
+                    <td>Classes</td>
+                    <td>68 steps</td>
+                    <td>Understanding classes and object-oriented programming in JavaScript.</td>
+                    <td>10/29</td>
+                </tr>
+                <tr>
+                    <td>Recursion</td>
+                    <td>112 steps</td>
+                    <td>Exploring recursive functions and their applications.</td>
+                    <td>10/2</td>
+                </tr>
+                <tr>
+                    <td>Functional Programming</td>
+                    <td>23 steps</td>
+                    <td>Learning functional programming concepts in JavaScript.</td>
+                    <td>10/3</td>
+                </tr>
+                <tr>
+                    <td>Asynchronous JavaScript</td>
+                    <td>36 steps</td>
+                    <td>Working with asynchronous operations and promises.</td>
+                    <td>10/4</td>
+                </tr>
+                <tr>
+                    <td>JavaScript Review</td>
+                    <td>1 step</td>
+                    <td>Comprehensive review of JavaScript concepts.</td>
+                    <td>10/4</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <p class="acknowledgement">I acknowledge that this is a single assignment within the course and not broken out into parts like the previous certification and will take responsibility for pacing myself.</p>
+        <p class="acknowledgement">- Jacob Kilcrease, 10/3/2025</p>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.js"></script>
+</body>
+
+</html>
