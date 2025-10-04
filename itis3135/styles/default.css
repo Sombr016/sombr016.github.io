@@ -6,8 +6,8 @@ html, body {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(147, 0, 0);
-    background-color: rgb(137, 143, 212);
+    color: rgb(216, 0, 0);
+    background-color: rgb(171, 176, 227);
 }
 
 header {
@@ -15,7 +15,7 @@ header {
     box-sizing: border-box;
     text-align: center;
     padding: 20px 0;
-    background-color:rgb(52, 55, 79);
+    background-color:rgb(25, 29, 58);
     color: rgb(192, 0, 0);
 }
 
@@ -58,15 +58,15 @@ footer p a {
 }
 
 a {
-    color: rgb(161, 66, 12);
+    color: rgb(93, 54, 32);
 }
 
 a:hover {
-    color: rgb(106, 75, 2);
+    color: rgb(147, 105, 8);
 }
 
 a:active {
-    color: rgb(158, 72, 2);
+    color: rgb(158, 85, 2);
 }
 
 figcaption {
