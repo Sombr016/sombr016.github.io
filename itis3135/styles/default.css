@@ -9,6 +9,19 @@ body {
     background-color:rgb(25, 29, 58);
     background-color: rgb(173, 177, 223);
 }
+@media (max-width: 600px) {
+    main{
+        max-width: 550px;
+        width: 90%;
+    }
+}
+
+@media (min-width: 1024px){
+    main{
+        max-width: 1000px;
+        width:80%;
+    }
+}
 
 header {
     width: 100vw;
@@ -25,7 +38,7 @@ main {
     font-size: 20px;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 2000px;
+    max-width: 1000px;
     width: 90%;
 }
 
