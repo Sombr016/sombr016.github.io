@@ -85,6 +85,7 @@ a:active {
     color: rgb(158, 85, 2);
 }
 
+ /* Introduction CSS*/
 figcaption {
     text-align: center;
     font-style: italic;
@@ -105,11 +106,58 @@ img {
     margin-bottom: 15px;
 }
 
-#quote {
+#quote, #quoteOutput{
     text-align: center;
 }
 
-#quote-name {
+#quote-name, #quoteAuthorOutput{
     text-align: center;
     font-style: italic;
 }
+/*Intro Form*/
+.inactive{
+    display: none;
+}
+#formOutputData{
+    background-color: antiquewhite;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+legend{
+    font-size: 30px;
+    border-style: groove;
+    border-width: 10px;
+    border-color:black;
+    padding: 3px;
+}
+fieldset{
+    border-color: black;
+    border-width: 10px;
+    border-style:groove;
+    margin:  20px auto;
+}
+
+
+input, textarea{
+    display: block;
+    border-width: 2px;
+    border-style:solid;
+    border-color: black;
+    margin-bottom: 20px;
+    margin-top: 3px;
+}
+
+.courseNumberIn, .courseNameIn, .courseDescriptionIn{
+    margin: 3px;
+}
+
+input[type="file"]{
+    border-style:none;
+}
+
+textarea{
+    width: 500px;
+    height: 50px;
+}
+

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIS 3135 | Jacob Kilcrease's | Joyous Kiwi | Intro Form</title>
+    <link rel="stylesheet" type="text/css" href="./styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div data-include="components/header.html"></div>
+    <main>
+        <h2>Build Your Own Introduction</h2>
+        <h3>Please submit the form below</h3>
+        <form id="form">
+            <fieldset id="nameInformation">
+                <legend>Name Information</legend>
+
+                <!-- First Name-->
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" value="Jacob" placeholder="Jaclyn" required>
+
+                <!--Middle Name/Initial  (optional)-->
+                <label for="middleName">Middle Name (optional):</label>
+                <input type="text" id="middleName" name="middleName" value="W" placeholder="Wilson">
+
+                <!--Preferred Name (optional)-->
+                <label for="preferredName">Preferred Name (optional):</label>
+                <input type="text" id="preferredName" name="preferredName" value="Will" placeholder="Jackie">
+
+                <!-- Last Name -->
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" value="Kilcrease" placeholder="Columbus">
+            </fieldset>
+
+            <fieldset id="acknowledgment">
+                <legend>Personal Acknowledgement</legend>
+
+                <!--Acknowledgment Statement-->
+                <label for="acknowledgementStatement">Acknowledgement Statement</label>
+                <textarea name="acknowledgementStatement" id="acknowledgementStatement"
+                    placeholder="Statement here">I acknowledge that the information I post here is visible to the public.</textarea>
+
+                <!--Acknowledgement Date-->
+                <label for="acknowledgementDate">Acknowledgement Date</label>
+                <input type="text" id="acknowledgementDate" name="acknowledgementDate" value="8/23/2025"
+                    placeholder="mm/dd/yyyy">
+            </fieldset>
+
+            <fieldset>
+                <legend>Mascot</legend>
+
+                <!--Mascot Adjective-->
+                <label for="mascotAdjective">Mascot Adjective</label>
+                <input type="text" id="mascotAdjective" name="mascotAdjective" value="Joyous" placeholder="Jolly">
+
+                <!--Mascot Animal-->
+                <label for="mascotAnimal">Mascot Animal</label>
+                <input type="text" id="mascotAnimal" name="mascotAnimal" value="Kiwi" placeholder="Kangaroo">
+            </fieldset>
+
+            <fieldset>
+                <legend>Divider</legend>
+
+                <!--Divider-->
+                <label for="divider">Divider</label>
+                <input type="text" id="divider" name="divider" value="~" placeholder="(~, |, ♥️, etc)">
+            </fieldset>
+
+            <fieldset>
+                <legend>Picture</legend>
+
+                <!--Picture-->
+                <label for="picture">Picture</label>
+                <input type="file" id="picture" name="picture">
+
+                <!--Picture Caption-->
+                <label for="pictureCaption">Picture Caption</label>
+                <input type="text" id="pictureCaption" name="pictureCaption"
+                    value="Me in front of a brick wall in the Cone building" placeholder="description here">
+            </fieldset>
+
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <!--Personal Acknowledgment-->
+                <label for="personalAcknowledgment">Personal Acknowledgement</label>
+                <textarea name="personalAcknowledgment" id="personalAcknowledgment">
+                Hello everyone I am Jacob Kilcrease. I am taking this class from a friend's recommendation and since I have very little experience with HTML and CSS. I play a lot of video games and various mountain based activities, mainly mountain biking and skiing. I have also been trying to re-learn to play the piano and drumset which I used to play back in high school but stopped doing since coming to college.
+            </textarea>
+
+                <!--Personal Background-->
+                <label for="personalBackground">Personal Background</label>
+                <input type="text" id="personalBackground" name="personalBackground"
+                    placeholder="Personal background here"
+                    value="I have lived in Raleigh, NC my whole life and never moved houses. My family used to own a house in Beech mountain where we would frequently go so Boone is like a second home for me despite never living there full time.">
+
+                <!--Professional Background-->
+                <label for="professionalBackground">Professional Background</label>
+                <input type="text" id="professionalBackground" name="professionalBackground"
+                    placeholder="Professional background here"
+                    value="I have worked various jobs from home renovation to restaurants and movie theaters.">
+
+                <!--Academic Background-->
+                <label for="academicBackground">Academic Background</label>
+                <input type="text" id="academicBackground" name="academicBackground"
+                    placeholder="Academic background here"
+                    value="Majoring in Computer Science with a concentration in AI,Robotics, and Game Design. I am in my Junior year and my goal is to push for my masters degree.">
+
+
+                <!--Primary Computer-->
+                <label for="primaryComputer">Primary Computer</label>
+                <input type="text" id="primaryComputer" name="primaryComputer" placeholder="Primary computer here"
+                    value="Lenovo, Windows 10, Desktop, in my apartment">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Courses</legend>
+                <div id="container"></div>
+                <button type="button" onclick="addField()">Add</button> 
+                <button type="button" onclick="removeField()">Remove</button>
+                <!--Course and sub-bullets, with fields for each of: department, number, name, reason.
+            Make it so people can add and remove classes-->
+            </fieldset>
+
+            <fieldset>
+                <legend>Quote</legend>
+
+                <!--Quote-->
+                <label for="quote">Quote</label>
+                <input type="text" id="quote" name="quote" placeholder="EPIC QUOTE"
+                    value="Listen, don't believe in yourself. Believe in the me who believes in you.">
+
+                <!--Quote Author-->
+                <label for="quoteAuthor">Quote Author</label>
+                <input type="text" id="quoteAuthor" name="quoteAuthor" placeholder="person name"
+                    value="Kazuki Nakashima">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Links</legend>
+
+                <!--LinkedIn-->
+                <label for="linkedIn">LinkedIn</label>
+                <input type="text" id="linkedIn" name="linkedIn"
+                    value="https://www.linkedin.com/in/jacob-kilcrease-722649328/" placeholder="LinkedIn Link">
+
+                <!--GitHub-->
+                <label for="gitHub">GitHub</label>
+                <input type="text" id="gitHub" name="gitHub" value="https://github.com/Sombr016"
+                    placeholder="GitHub profile link">
+
+                <!--GitHub.io-->
+                <label for="gitHubIO">GitHub.io</label>
+                <input type="text" id="gitHubIO" name="gitHubIO" value="https://sombr016.github.io/"
+                    placeholder="GitHub.io webpage link">
+
+                <!--CLT Homepage-->
+                <label for="cltHomepage">CLT Homepage</label>
+                <input type="text" id="cltHomepage" name="cltHomepage" value="https://webpages.charlotte.edu/jkilcrea/"
+                    placeholder="CLT Homepage link">
+
+                <!--Course Page-->
+                <label for="coursePage">Course Page</label>
+                <input type="text" id="coursePage" name="coursePage" value="https://sombr016.github.io/itis3135/"
+                    placeholder="Course Page Link">
+
+                <!--freeCodeCamp-->
+                <label for="freeCodeCamp">freeCodeCamp</label>
+                <input type="text" id="freeCodeCamp" name="freeCodeCamp"
+                    value="https://www.freecodecamp.org/jacob_kilcrease" placeholder="freeCodeCamp Profile link">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Optionals</legend>
+
+                <label for="funnyThing">Funny Thing</label>
+                <input type="text" id="funnyThing" name="funnyThing" placeholder="Something funny">
+
+                <label for="somethingToShare">Something I would like to share</label>
+                <input type="text" id="somethingToShare" name="somethingToShare" placeholder="Something to share">
+            </fieldset>
+
+            <button onclick="submitData()">Submit</button>
+            <button type="reset" onclick="hideForm(), clearAllField()">Reset</button>
+            <button type="button" onclick="clearValues()">Clear</button>
+        </form>
+
+        <h3>Results Here</h3>
+
+        <!--layout for the intro form-->
+        <section id="formOutputData" class="inactive">
+            
+            <p id="publicAcknowledgmentOutput"></p>
+            <!--Name-->
+            <h2 id="nameOutput">ERROR</h2>
+
+            <!--Personal image-->
+            <figure>
+                <img id="pictureOutput" src="#" alt="default picture">
+                <figcaption>
+                    <p id="pictureCaptionOutput"></p>
+                </figcaption>
+            </figure>
+
+            <!--Personal Acknowledgment-->
+            <p id="personalAcknowledgmentOutput"></p>
+
+            <!--Personal bullet points-->
+            <ul id="introListOutput">
+                <!--Personal Background-->
+                <li id="personalBackgroundOutput"></li>
+                <!--Professional Background-->
+                <li id="professionalBackgroundOutput"></li>
+                <!--Academic Background-->
+                <li id="academicBackgroundOutput"></li>
+                <!--Primary Computer-->
+                <li id="primaryComputerOutput"></li>
+                <!--Courses-->
+                <li><strong>Courses I'm Taking, & Why:</strong>
+                    <ul id="coursesOutput">
+                        
+                    </ul>
+                </li>
+
+                <!--Funny/interest to remember you by-->
+                <li id="funnyOutput"></li>
+                <!--Something interesting-->
+                <li id="somethingOutput"></li>
+            </ul>
+            <!--Quote and author name-->
+            <p id="quoteOutput"></p>
+            <p id="quoteAuthorOutput"></p>
+            
+            <nav id="linkOutput"></nav>
+        </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.js"></script>
+    <script src="scripts/formHandeler.js"></script>
+</body>
+
+</html>
