@@ -116,14 +116,6 @@ img {
 .inactive{
     display: none;
 }
-#formOutputData{
-    /*
-    background-color: antiquewhite;
-    border-radius: 8px;
-    */
-    padding: 10px 20px;
-    margin-top: 5px;
-}
 legend{
     font-size: 30px;
     border-style: groove;
