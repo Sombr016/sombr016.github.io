@@ -99,7 +99,7 @@ img {
     display: block;
 }
 
-#intro-list>li {
+li {
     width: 80%;
     margin-bottom: 15px;
 }
@@ -129,7 +129,6 @@ fieldset{
     border-style:groove;
     margin:  20px auto;
 }
-
 
 input, textarea{
     display: block;
