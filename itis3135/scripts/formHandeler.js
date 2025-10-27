@@ -136,7 +136,7 @@ function submitData() {
     }
 
     //Quote
-    quoteElement.innerHTML = `<strong>Quote: </strong>"${quoteInput.value}"`;
+    quoteElement.innerHTML = `"${quoteInput.value}"`;
     quoteAuthorElement.innerHTML = `-${quoteAuthorInput.value}`;
 
     //Links
