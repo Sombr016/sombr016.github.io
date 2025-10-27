@@ -41,6 +41,9 @@ main {
     max-width: 1000px;
     width: 90%;
 }
+nav{
+    text-align: center;
+}
 
 footer {
     text-align: center;
@@ -58,10 +61,6 @@ footer hr{
     color: black;
 }
 
-p {
-    width: 85%;
-    height: 100%;
-}
 header a{
     color:rgb(0, 174, 255);
 }
@@ -98,7 +97,6 @@ img {
 
 #intro {
     display: block;
-    text-align: center;
 }
 
 #intro-list>li {
@@ -119,8 +117,10 @@ img {
     display: none;
 }
 #formOutputData{
+    /*
     background-color: antiquewhite;
     border-radius: 8px;
+    */
     padding: 10px 20px;
     margin-top: 5px;
 }
@@ -161,3 +161,19 @@ textarea{
     height: 50px;
 }
 
+#pictureOutput{
+    max-width: 800px;
+    max-height: 800px;
+}
+.courseDescriptionIn{
+    margin-bottom: 30px;
+}
+#returnButton{
+    background-color: green;
+    border-style: solid;
+    border-width: 2px;
+    width:150px;
+    height: 30px;
+    font-size: 20px;
+    margin: 40px 40%;
+}

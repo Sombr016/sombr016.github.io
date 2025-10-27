@@ -7,9 +7,8 @@ const container = document.getElementById("container");
 formElement.addEventListener("submit", (e) => e.preventDefault());
 
 function submitData() {
-    alert("submit data started");
 
-
+    formElement.classList.add("inactive");
 
 
 
@@ -18,10 +17,6 @@ function submitData() {
     const firstNameInput = document.getElementById("firstName");
     const middleNameInput = document.getElementById("middleName");
     const lastNameInput = document.getElementById("lastName");
-
-    //Acknowledgment
-    const acknowledgementStatementInput = document.getElementById("acknowledgementStatement");
-    const acknowledgementDateInput = document.getElementById("acknowledgementDate");
 
     //Mascot
     const mascotAdjectiveInput = document.getElementById("mascotAdjective");
@@ -84,13 +79,8 @@ function submitData() {
 
     /*Form output*/
 
-    //Public Acknowledgement
-    publicAcknowledgmentElement.innerHTML = `${acknowledgementStatementInput.value} -${acknowledgementDateInput.value}`;
-
     //Name and Mascot 
     nameElement.innerHTML = `${firstNameInput.value} ${middleNameInput.value} ${lastNameInput.value} ${dividerInput.value} ${mascotAdjectiveInput.value} ${mascotAnimalInput.value}`;
-
-
 
     //Personal image
     if (!pictureInput || !pictureInput.type.startsWith('image/')) document.getElementById('pictureOutput').src = "images/jacob-cone-with-anderson.jpg";
@@ -100,6 +90,7 @@ function submitData() {
         reader.readAsDataURL(pictureInput);
         reader.close();
     }
+
     //Picture Caption
     pictureCaptionElement.innerHTML = pictureCaptionInput.value;
 
@@ -159,7 +150,6 @@ function submitData() {
 }
 
 function hideForm() {
-    const formOutputDataElement = document.getElementById("formOutputData");
     formOutputDataElement.classList.add("inactive");
 }
 
@@ -181,7 +171,6 @@ function addField() {
     courseNumberInput.setAttribute("placeholder", "Course Id and Number");
     courseNumberInput.setAttribute("class", "courseNumberIn");
     courseNumberInput.setAttribute("type", "text");
-    courseNumberInput.setAttribute("value", "Math2164");
     container.appendChild(courseNumberInput);
 
     //Makes the input for course name
@@ -190,13 +179,11 @@ function addField() {
     courseNameInput.setAttribute("placeholder", "Course Name");
     courseNameInput.setAttribute("class", "courseNameIn");
     courseNameInput.setAttribute("type", "text");
-    courseNameInput.setAttribute("value", "Matrices and Linear Algebra");
     container.appendChild(courseNameInput);
 
     //Makes course description 
     const courseDescription = document.createElement("textarea");
     courseDescription.setAttribute("class", "courseDescriptionIn");
-    courseDescription.value = "Very important mathematical base for many concepts in computer science.";
     container.appendChild(courseDescription);
 
 
@@ -220,9 +207,14 @@ function removeField() {
 
 }
 
-function clearAllField(){
-    while (container.hasChildNodes()) {
-        container.removeChild(container.lastChild);
+function clearAllField() {
+    // Remove child elements of container while it has more than 3 children
+    while (container.children.length > 9) {
+        container.removeChild(container.lastElementChild);
     }
 }
 
+function returnForm(){
+    formOutputDataElement.classList.add("inactive");
+    formElement.classList.remove("inactive");
+}

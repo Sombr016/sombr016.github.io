@@ -14,8 +14,9 @@
     <div data-include="components/header.html"></div>
     <main>
         <h2>Build Your Own Introduction</h2>
-        <h3>Please submit the form below</h3>
+        
         <form id="form">
+            <h3>Please submit the form below</h3>
             <fieldset id="nameInformation">
                 <legend>Name Information</legend>
 
@@ -34,20 +35,6 @@
                 <!-- Last Name -->
                 <label for="lastName">Last Name:</label>
                 <input type="text" id="lastName" name="lastName" value="Kilcrease" placeholder="Columbus">
-            </fieldset>
-
-            <fieldset id="acknowledgment">
-                <legend>Personal Acknowledgement</legend>
-
-                <!--Acknowledgment Statement-->
-                <label for="acknowledgementStatement">Acknowledgement Statement</label>
-                <textarea name="acknowledgementStatement" id="acknowledgementStatement"
-                    placeholder="Statement here">I acknowledge that the information I post here is visible to the public.</textarea>
-
-                <!--Acknowledgement Date-->
-                <label for="acknowledgementDate">Acknowledgement Date</label>
-                <input type="text" id="acknowledgementDate" name="acknowledgementDate" value="8/23/2025"
-                    placeholder="mm/dd/yyyy">
             </fieldset>
 
             <fieldset>
@@ -120,7 +107,22 @@
 
             <fieldset>
                 <legend>Courses</legend>
-                <div id="container"></div>
+                <div id="container">
+
+                    <input type="text" class="courseNumberIn" placeholder="Course Number and ID" value="ITSC3688">
+                    <input type="text" class="courseNameIn" placeholder="Course Name" value="Computers and Their Impact on Society">
+                    <textarea class="courseDescriptionIn" placeholder="Course Description">I have always had an interest in sociology and ethics and with me mainly focusing on AI with my degree I felt it important to understand how modern technology has impacted people.</textarea>
+
+                    <input type="text" class="courseNumberIn" placeholder="Course Number and ID" value="ITCS3156">
+                    <input type="text" class="courseNameIn" placeholder="Course Name" value="Intro to Machine Learning">
+                    <textarea class="courseDescriptionIn" placeholder="Course Description">There are small bits of personal research I have done with machine learning but it is important to take a full class on the subject especially if I am to make a career around it.</textarea>
+
+                    <input type="text" class="courseNumberIn" placeholder="Course Number and ID" value="Math2164">
+                    <input type="text" class="courseNameIn" placeholder="Course Name" value="Matrices and Linear Algebra">
+                    <textarea class="courseDescriptionIn" placeholder="Course Description">Very important mathematical base for many concepts in computer science.</textarea>
+
+                </div>
+
                 <button type="button" onclick="addField()">Add</button> 
                 <button type="button" onclick="removeField()">Remove</button>
                 <!--Course and sub-bullets, with fields for each of: department, number, name, reason.
@@ -192,14 +194,11 @@
             <button type="button" onclick="clearValues()">Clear</button>
         </form>
 
-        <h3>Results Here</h3>
-
         <!--layout for the intro form-->
         <section id="formOutputData" class="inactive">
             
-            <p id="publicAcknowledgmentOutput"></p>
             <!--Name-->
-            <h2 id="nameOutput">ERROR</h2>
+            <h3 id="nameOutput">ERROR</h3>
 
             <!--Personal image-->
             <figure>
@@ -239,11 +238,15 @@
             <p id="quoteAuthorOutput"></p>
             
             <nav id="linkOutput"></nav>
+
+            <button type="button" onclick="returnForm()" id="returnButton">Return to Form</button>
         </section>
     </main>
+
     <div data-include="components/footer.html"></div>
     <script src="scripts/HTMLInclude.js"></script>
     <script src="scripts/formHandeler.js"></script>
+
 </body>
 
 </html>
