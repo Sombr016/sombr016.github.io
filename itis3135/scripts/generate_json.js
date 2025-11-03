@@ -82,7 +82,22 @@ function generateJSON(){
     // show raw JSON, hide form output section
     if (rawJSONElement) {
         rawJSONElement.classList.remove('inactive');
-        rawJSONElement.innerText = JSON.stringify(data, null, 2);
+
+        // if a <pre><code> already exists, reuse it; otherwise create one
+        let codeEl = rawJSONElement.querySelector('pre code');
+        if (!codeEl) {
+            const pre = document.createElement('pre');
+            codeEl = document.createElement('code');
+            codeEl.className = 'json';
+            pre.appendChild(codeEl);
+            rawJSONElement.appendChild(pre);
+        } else {
+            // ensure requested class
+            if (!codeEl.classList.contains('json')) codeEl.classList.add('json');
+        }
+
+        // place JSON as text inside the code element (preserves formatting & is safe)
+        codeEl.textContent = JSON.stringify(data, null, 2);
     }
     if (formOutputDataElement) {
         formOutputDataElement.classList.add('inactive');
@@ -91,5 +106,8 @@ function generateJSON(){
         pageNameElement.textContent = 'Introduction HTML';
     }
 
+    hljs.highlightAll();
+    
     return data;
+
 }

@@ -28,11 +28,13 @@ function generateHTML() {
             // use textContent so the escaped entities are shown literally
             codeEl.textContent = escaped;
         } else {
-            rawHTMLElement.innerHTML = `<pre><code class="language-html">${escaped}</code></pre>`;
+            rawHTMLElement.innerHTML = `<pre><code class="html">${escaped}</code></pre>`;
         }
     }
 
     // hide the rendered form output and update heading
     if (formOutputDataElement) formOutputDataElement.classList.add('inactive');
     if (pageNameElement) pageNameElement.textContent = "Introduction HTML";
+
+    hljs.highlightAll();
 }
