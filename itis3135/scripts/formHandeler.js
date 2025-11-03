@@ -7,7 +7,7 @@ const container = document.getElementById("container");
 formElement.addEventListener("submit", (e) => e.preventDefault());
 
 function submitData() {
-
+    
     formElement.classList.add("inactive");
 
 

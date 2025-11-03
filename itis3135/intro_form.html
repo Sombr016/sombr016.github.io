@@ -13,8 +13,10 @@
 <body>
     <div data-include="components/header.html"></div>
     <main>
-        <h2>Introduction Form</h2>
-        
+        <h2 id="pageName">Introduction Form</h2>
+
+
+
         <form id="form">
             <h3>Please submit the form below</h3>
             <fieldset id="nameInformation">
@@ -75,7 +77,8 @@
 
                 <!--Personal Acknowledgment-->
                 <label for="personalAcknowledgment">Personal Acknowledgement</label>
-                <textarea name="personalAcknowledgment" id="personalAcknowledgment">Hello everyone I am Jacob Kilcrease. I am taking this class from a friend's recommendation and since I have very little experience with HTML and CSS. I play a lot of video games and various mountain based activities, mainly mountain biking and skiing. I have also been trying to re-learn to play the piano and drumset which I used to play back in high school but stopped doing since coming to college.</textarea>
+                <textarea name="personalAcknowledgment"
+                    id="personalAcknowledgment">Hello everyone I am Jacob Kilcrease. I am taking this class from a friend's recommendation and since I have very little experience with HTML and CSS. I play a lot of video games and various mountain based activities, mainly mountain biking and skiing. I have also been trying to re-learn to play the piano and drumset which I used to play back in high school but stopped doing since coming to college.</textarea>
 
                 <!--Personal Background-->
                 <label for="personalBackground">Personal Background</label>
@@ -108,20 +111,25 @@
                 <div id="container">
 
                     <input type="text" class="courseNumberIn" placeholder="Course Number and ID" value="ITSC3688">
-                    <input type="text" class="courseNameIn" placeholder="Course Name" value="Computers and Their Impact on Society">
-                    <textarea class="courseDescriptionIn" placeholder="Course Description">I have always had an interest in sociology and ethics and with me mainly focusing on AI with my degree I felt it important to understand how modern technology has impacted people.</textarea>
+                    <input type="text" class="courseNameIn" placeholder="Course Name"
+                        value="Computers and Their Impact on Society">
+                    <textarea class="courseDescriptionIn"
+                        placeholder="Course Description">I have always had an interest in sociology and ethics and with me mainly focusing on AI with my degree I felt it important to understand how modern technology has impacted people.</textarea>
 
                     <input type="text" class="courseNumberIn" placeholder="Course Number and ID" value="ITCS3156">
                     <input type="text" class="courseNameIn" placeholder="Course Name" value="Intro to Machine Learning">
-                    <textarea class="courseDescriptionIn" placeholder="Course Description">There are small bits of personal research I have done with machine learning but it is important to take a full class on the subject especially if I am to make a career around it.</textarea>
+                    <textarea class="courseDescriptionIn"
+                        placeholder="Course Description">There are small bits of personal research I have done with machine learning but it is important to take a full class on the subject especially if I am to make a career around it.</textarea>
 
                     <input type="text" class="courseNumberIn" placeholder="Course Number and ID" value="Math2164">
-                    <input type="text" class="courseNameIn" placeholder="Course Name" value="Matrices and Linear Algebra">
-                    <textarea class="courseDescriptionIn" placeholder="Course Description">Very important mathematical base for many concepts in computer science.</textarea>
+                    <input type="text" class="courseNameIn" placeholder="Course Name"
+                        value="Matrices and Linear Algebra">
+                    <textarea class="courseDescriptionIn"
+                        placeholder="Course Description">Very important mathematical base for many concepts in computer science.</textarea>
 
                 </div>
 
-                <button type="button" onclick="addField()">Add</button> 
+                <button type="button" onclick="addField()">Add</button>
                 <button type="button" onclick="removeField()">Remove</button>
                 <!--Course and sub-bullets, with fields for each of: department, number, name, reason.
             Make it so people can add and remove classes-->
@@ -190,11 +198,13 @@
             <button onclick="submitData()">Submit</button>
             <button type="reset" onclick="hideForm(), clearAllField()">Reset</button>
             <button type="button" onclick="clearValues()">Clear</button>
+            <button type="button" onclick="generateHTML()">Generate HTML</button>
+            <button type="button" onclick="generateJSON()">Generate JSON</button>
         </form>
 
         <!--layout for the intro form-->
         <section id="formOutputData" class="inactive">
-            
+
             <!--Name-->
             <h3 id="nameOutput">ERROR</h3>
 
@@ -222,7 +232,7 @@
                 <!--Courses-->
                 <li><strong>Courses I'm Taking, & Why:</strong>
                     <ul id="coursesOutput">
-                        
+
                     </ul>
                 </li>
 
@@ -234,16 +244,73 @@
             <!--Quote and author name-->
             <p id="quoteOutput"></p>
             <p id="quoteAuthorOutput"></p>
-            
+
             <nav id="linkOutput"></nav>
 
             <button type="button" onclick="returnForm()" id="returnButton">Return to Form</button>
+        </section>
+
+        
+        <section id="rawHTML" class="inactive">
+            <h3>HTML</h3>
+            <pre>
+                <code>
+&lt;h2 id="pageName"&gt;Introduction Form&lt;/h2&gt;
+&lt;h3 id="nameOutput"&gt;ERROR&lt;/h3&gt;
+
+&lt;!--Personal image--&gt;
+&lt;figure&gt;
+    &lt;img id="pictureOutput" src="#" alt="default picture"&gt;
+    &lt;figcaption&gt;
+        &lt;p id="pictureCaptionOutput"&gt;&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!--Personal Acknowledgment--&gt;
+&lt;p id="personalAcknowledgmentOutput"&gt;&lt;/p&gt;
+
+&lt;!--Personal bullet points--&gt;
+&lt;ul id="introListOutput"&gt;
+    &lt;!--Personal Background--&gt;
+    &lt;li id="personalBackgroundOutput"&gt;&lt;/li&gt;
+    &lt;!--Professional Background--&gt;
+    &lt;li id="professionalBackgroundOutput"&gt;&lt;/li&gt;
+    &lt;!--Academic Background--&gt;
+    &lt;li id="academicBackgroundOutput"&gt;&lt;/li&gt;
+    &lt;!--Primary Computer--&gt;
+    &lt;li id="primaryComputerOutput"&gt;&lt;/li&gt;
+    &lt;!--Courses--&gt;
+    &lt;li&gt;&lt;strong&gt;Courses I'm Taking, &amp; Why:&lt;/strong&gt;
+        &lt;ul id="coursesOutput"&gt;
+            
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;!--Funny/interest to remember you by--&gt;
+    &lt;li id="funnyOutput"&gt;&lt;/li&gt;
+    &lt;!--Something interesting--&gt;
+    &lt;li id="somethingOutput"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--Quote and author name--&gt;
+&lt;p id="quoteOutput"&gt;&lt;/p&gt;
+&lt;p id="quoteAuthorOutput"&gt;&lt;/p&gt;
+
+&lt;nav id="linkOutput"&gt;&lt;/nav&gt;
+                </code>
+            </pre>
+        </section>
+
+        <section id="rawJSON">
+            <h3>Raw JSON</h3>
+
         </section>
     </main>
 
     <div data-include="components/footer.html"></div>
     <script src="scripts/HTMLInclude.js"></script>
     <script src="scripts/formHandeler.js"></script>
+    <script src="scripts/generate_html.js"></script>
+    <script src="scripts/generate_json.js"></script>
 
 </body>
 
