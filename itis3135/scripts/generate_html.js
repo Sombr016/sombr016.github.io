@@ -23,10 +23,12 @@ function generateHTML() {
         rawHTMLElement.classList.remove('inactive');
         const codeEl = rawHTMLElement.querySelector('pre code');
         if (codeEl) {
+            // ensure code element has language-html class for syntax highlighting
+            if (!codeEl.classList.contains('language-html')) codeEl.classList.add('language-html');
             // use textContent so the escaped entities are shown literally
             codeEl.textContent = escaped;
         } else {
-            rawHTMLElement.innerHTML = `<pre><code>${escaped}</code></pre>`;
+            rawHTMLElement.innerHTML = `<pre><code class="language-html">${escaped}</code></pre>`;
         }
     }
 
