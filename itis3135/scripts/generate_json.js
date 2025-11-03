@@ -1,4 +1,3 @@
-
 const nameElement = document.getElementById("nameOutput");
 
 let formElements = {
@@ -8,18 +7,89 @@ let formElements = {
 function generateJSON(){
     const rawJSONElement = document.getElementById("rawJSON");
     const formOutputDataElement = document.getElementById("formOutputData");
-    const nameElement = document.getElementById("nameOutput");
     const pageNameElement = document.getElementById("pageName");
 
-    //show the JSON section
-    submitData();
+    // ensure form values/outputs are populated
+    if (typeof submitData === 'function') {
+        try { submitData(); } catch (e) { /* ignore errors from submitData */ }
+    }
 
-    rawJSONElement.classList.remove("inactive");
-    formOutputDataElement.classList.add("inactive");
-    //Replace h2 with introduction HTML
-    pageNameElement.innerHTML = "Introduction HTML";
+    const getVal = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return null;
+        if (el.type === 'file') {
+            const f = el.files && el.files[0];
+            return f ? { name: f.name, type: f.type, size: f.size } : null;
+        }
+        return el.value;
+    };
 
+    // build courses array from dynamic inputs (if present)
+    const container = document.getElementById('container');
+    const courses = [];
+    if (container) {
+        const nums = container.getElementsByClassName('courseNumberIn');
+        const names = container.getElementsByClassName('courseNameIn');
+        const descs = container.getElementsByClassName('courseDescriptionIn');
+        for (let i = 0; i < nums.length; i++) {
+            courses.push({
+                number: nums[i] ? nums[i].value : null,
+                name: names[i] ? names[i].value : null,
+                description: descs[i] ? descs[i].value : null
+            });
+        }
+    }
 
-    rawJSONElement.innerHTML = JSON.stringify(formElements);
-    
+    const data = {
+        pageName: pageNameElement ? pageNameElement.textContent : null,
+        name: {
+            first: getVal('firstName'),
+            middle: getVal('middleName'),
+            preferred: getVal('preferredName'),
+            last: getVal('lastName')
+        },
+        mascot: {
+            adjective: getVal('mascotAdjective'),
+            animal: getVal('mascotAnimal')
+        },
+        divider: getVal('divider'),
+        picture: getVal('picture'), // includes file meta if uploaded
+        pictureCaption: getVal('pictureCaption'),
+        personalAcknowledgment: getVal('personalAcknowledgment'),
+        personalBackground: getVal('personalBackground'),
+        professionalBackground: getVal('professionalBackground'),
+        academicBackground: getVal('academicBackground'),
+        primaryComputer: getVal('primaryComputer'),
+        courses: courses,
+        quote: {
+            text: getVal('quote'),
+            author: getVal('quoteAuthor')
+        },
+        links: {
+            linkedIn: getVal('linkedIn'),
+            gitHub: getVal('gitHub'),
+            gitHubIO: getVal('gitHubIO'),
+            cltHomepage: getVal('cltHomepage'),
+            coursePage: getVal('coursePage'),
+            freeCodeCamp: getVal('freeCodeCamp')
+        },
+        optionals: {
+            funnyThing: getVal('funnyThing'),
+            somethingToShare: getVal('somethingToShare')
+        }
+    };
+
+    // show raw JSON, hide form output section
+    if (rawJSONElement) {
+        rawJSONElement.classList.remove('inactive');
+        rawJSONElement.innerText = JSON.stringify(data, null, 2);
+    }
+    if (formOutputDataElement) {
+        formOutputDataElement.classList.add('inactive');
+    }
+    if (pageNameElement) {
+        pageNameElement.textContent = 'Introduction HTML';
+    }
+
+    return data;
 }
