@@ -166,3 +166,9 @@ textarea{
     font-size: 20px;
     margin: 40px 40%;
 }
+
+/* Review CSS*/
+.client-review-pic{
+    max-width: 60rem;
+    max-height: 60rem;
+}
